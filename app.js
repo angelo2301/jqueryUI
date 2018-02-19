@@ -1,4 +1,9 @@
 $(function() {
+
+  $("#datepicker").datepicker();
+
+
+
   $(".d").children().find("div").draggable({
    zIndex: 100,
    revert: true,
@@ -9,16 +14,15 @@ $(function() {
     drop: function(e,i){
       var padre = $(this);
 
-      if(padre.find("span").text() == "vacio"){
-        $(i.draggable).css({top:0,left:0}).appendTo(padre);
-        padre.find("span").text("ocupado")
-      }
+        if($(this).find("div").length == 0){
+          $(i.draggable).css({top:0,left:0}).appendTo(padre);
+        }
 
-      $(this).find("span").text("ocupado");
+
+
     },
-
-    out: function(){
-      $(this).find("span").text("vacio");
+    over: function(e,i){
+      //console.log($(this).find("div").length);
     }
   });
 
