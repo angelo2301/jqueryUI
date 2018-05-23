@@ -1,9 +1,5 @@
 $(function() {
 
-  $("#datepicker").datepicker();
-
-
-
   $(".d").children().find("div").draggable({
    zIndex: 100,
    revert: true,
